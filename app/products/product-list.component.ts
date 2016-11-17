@@ -3,16 +3,20 @@ import {IProduct} from './product';
 @Component({
     moduleId: module.id,
     selector: 'pm-products',
-    templateUrl: 'product-list.component.html'
+    templateUrl: 'product-list.component.html',
+    styleUrls:['product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
     constructor() { }
+     products:IProduct[];
     pageTitle:string = "Product List";
     showImage:boolean = false;
     imageWidth:number=50;
     imageMargin:number=2;
     listFilter:string='cart';
-    products:IProduct[]=[
+    
+    ngOnInit():void { 
+     this.products=[
     {
         "productId": 1,
         "productName": "Leaf Rake",
@@ -64,7 +68,7 @@ export class ProductListComponent implements OnInit {
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
 ];
-    ngOnInit() { }
+    }
     toggleImage():void{
         this.showImage = !this.showImage;
     }

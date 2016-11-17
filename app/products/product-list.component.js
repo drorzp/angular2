@@ -16,6 +16,8 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.listFilter = 'cart';
+    }
+    ProductListComponent.prototype.ngOnInit = function () {
         this.products = [
             {
                 "productId": 1,
@@ -68,8 +70,7 @@ var ProductListComponent = (function () {
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
             }
         ];
-    }
-    ProductListComponent.prototype.ngOnInit = function () { };
+    };
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
@@ -77,7 +78,8 @@ var ProductListComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'pm-products',
-            templateUrl: 'product-list.component.html'
+            templateUrl: 'product-list.component.html',
+            styleUrls: ['product-list.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], ProductListComponent);
